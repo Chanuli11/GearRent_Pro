@@ -173,5 +173,3 @@ lives in `RentalService.DEPOSIT_LIMIT`.
 - [x] JDBC + transactions for critical operations
 - [x] Input validation with friendly error messages
 - [x] Role-based access control after login
-
-Good luck with your submission!
