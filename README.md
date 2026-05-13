@@ -82,7 +82,7 @@ mvn clean javafx:run
 Right-click `src/main/java/com/gearrent/ui/Launcher.java` > **Run 'Launcher.main()'**.
 
 > Why a `Launcher` class? JavaFX modules require a non-`Application`
-> entry point when launched from the classpath — `Launcher` just calls
+> entry point when launched from the classpath - `Launcher` just calls
 > `MainApp.main(args)`.
 
 ### Step 5 - Push to GitHub
