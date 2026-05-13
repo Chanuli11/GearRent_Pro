@@ -1,9 +1,9 @@
-# GearRent Pro — Multi-Branch Equipment Rental System
+# GearRent Pro - Multi-Branch Equipment Rental System
 
 A Java + JavaFX + MySQL desktop application built for **CMJD Course Work 2 (IJSE)**.
 It manages branches, equipment, categories, customers, reservations, rentals,
-returns, overdue tracking, and reports — using a strict **layered architecture**
-(Entity → DAO → Service → Controller → UI).
+returns, overdue tracking, and reports - using a strict **layered architecture**
+(Entity > DAO > Service > Controller > UI).
 
 ---
 
@@ -31,17 +31,17 @@ GearRentPro/
 
 Install these on your computer:
 
-1. **JDK 17 or higher** — https://adoptium.net
-2. **MySQL Server 8.x** — https://dev.mysql.com/downloads/mysql/
-3. **IntelliJ IDEA Community** (recommended) — https://www.jetbrains.com/idea/download/
-4. **Maven** (bundled with IntelliJ — nothing extra needed)
-5. **Git** — https://git-scm.com
+1. **JDK 17 or higher** - https://adoptium.net
+2. **MySQL Server 8.x** - https://dev.mysql.com/downloads/mysql/
+3. **IntelliJ IDEA Community** (recommended) - https://www.jetbrains.com/idea/download/
+4. **Maven** (bundled with IntelliJ - nothing extra needed)
+5. **Git** - https://git-scm.com
 
 ---
 
 ## 3. Step-by-Step Setup
 
-### Step 1 — Create the database
+### Step 1 - Create the database
 
 Open **MySQL Workbench** (or any MySQL client) and run the file `database.sql`.
 It will:
@@ -52,7 +52,7 @@ It will:
   sample rentals (active / overdue / returned / damaged) and reservations,
 * create 6 system users covering all 3 roles.
 
-### Step 2 — Configure DB credentials
+### Step 2 - Configure DB credentials
 
 Open `src/main/java/com/gearrent/util/DBConnection.java` and change the
 `USER` / `PASS` constants to match your local MySQL setup. Default:
@@ -62,14 +62,14 @@ private static final String USER = "root";
 private static final String PASS = "root";
 ```
 
-### Step 3 — Open the project in IntelliJ
+### Step 3 - Open the project in IntelliJ
 
-1. `File → Open` → select the `GearRentPro` folder.
+1. `File > Open` > select the `GearRentPro` folder.
 2. IntelliJ will detect the `pom.xml` and download dependencies automatically
    (JavaFX 21 + MySQL Connector 8.0.33). Wait for indexing to finish.
-3. Make sure **Project SDK** is set to JDK 17+ (`File → Project Structure → Project`).
+3. Make sure **Project SDK** is set to JDK 17+ (`File > Project Structure > Project`).
 
-### Step 4 — Run the application
+### Step 4 - Run the application
 
 Two ways:
 
@@ -79,13 +79,13 @@ mvn clean javafx:run
 ```
 
 **B. From IntelliJ:**
-Right-click `src/main/java/com/gearrent/ui/Launcher.java` → **Run 'Launcher.main()'**.
+Right-click `src/main/java/com/gearrent/ui/Launcher.java` > **Run 'Launcher.main()'**.
 
 > Why a `Launcher` class? JavaFX modules require a non-`Application`
 > entry point when launched from the classpath — `Launcher` just calls
 > `MainApp.main(args)`.
 
-### Step 5 — Push to GitHub
+### Step 5 - Push to GitHub
 
 ```bash
 cd GearRentPro
@@ -138,12 +138,12 @@ git push -u origin main
 ## 6. Pricing Formula (implemented in `RentalPriceService`)
 
 ```
-weekday_price = equipment.daily_base_price × category.base_price_factor
-weekend_price = weekday_price × category.weekend_multiplier
-rental_amount = (weekday_price × weekday_count) + (weekend_price × weekend_count)
+weekday_price = equipment.daily_base_price * category.base_price_factor
+weekend_price = weekday_price * category.weekend_multiplier
+rental_amount = (weekday_price * weekday_count) + (weekend_price * weekend_count)
 
 if days >= 7:  long_rental_disc = 10% of rental_amount
-membership_disc = (rental_amount - long_rental_disc) × membership.discount_pct
+membership_disc = (rental_amount - long_rental_disc) * membership.discount_pct
 final_payable   = rental_amount - long_rental_disc - membership_disc
 ```
 
@@ -156,9 +156,9 @@ lives in `RentalService.DEPOSIT_LIMIT`.
 
 | Problem | Fix |
 |---|---|
-| `Communications link failure` | MySQL not running, or wrong port — check `DBConnection.java` URL. |
+| `Communications link failure` | MySQL not running, or wrong port - check `DBConnection.java` URL. |
 | `Access denied for user 'root'` | Wrong password in `DBConnection.java`. |
-| `Error: JavaFX runtime components are missing` | You ran `MainApp.main()` directly — use `Launcher.main()` or `mvn javafx:run`. |
+| `Error: JavaFX runtime components are missing` | You ran `MainApp.main()` directly - use `Launcher.main()` or `mvn javafx:run`. |
 | FXML "Location is not set" | Make sure `src/main/resources` is marked as **Resources Root** in IntelliJ. |
 | No data shows | Re-run `database.sql` in MySQL Workbench. |
 
