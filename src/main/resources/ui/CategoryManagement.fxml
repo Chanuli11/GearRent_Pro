@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.CategoryController" prefWidth="950" prefHeight="600">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Category Management" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <TextField fx:id="name" promptText="Name"/>
+        <TextField fx:id="description" promptText="Description"/>
+        <TextField fx:id="basePrice" promptText="Base factor"/>
+        <TextField fx:id="weekend" promptText="Weekend mult."/>
+        <TextField fx:id="lateFee" promptText="Late fee/day"/>
+        <CheckBox fx:id="active" text="Active" selected="true"/>
+        <Button text="Save" onAction="#save"/><Button text="Update" onAction="#update"/>
+        <Button text="Delete" onAction="#delete"/><Button text="Clear" onAction="#clear"/>
+      </HBox>
+      <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="cId" text="ID" prefWidth="50"/>
+          <TableColumn fx:id="cName" text="Name" prefWidth="120"/>
+          <TableColumn fx:id="cDesc" text="Description" prefWidth="220"/>
+          <TableColumn fx:id="cFactor" text="Factor" prefWidth="80"/>
+          <TableColumn fx:id="cWeekend" text="Weekend×" prefWidth="90"/>
+          <TableColumn fx:id="cLate" text="Late fee" prefWidth="90"/>
+          <TableColumn fx:id="cActive" text="Active" prefWidth="70"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </center>
+</BorderPane>

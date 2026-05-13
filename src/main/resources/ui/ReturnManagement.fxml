@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.ReturnController" prefWidth="1000" prefHeight="600">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Process Return" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <Label text="Rental ID:"/><TextField fx:id="rentalId"/>
+        <Button text="Load" onAction="#loadRental"/>
+      </HBox>
+      <Label fx:id="info"/>
+      <HBox spacing="6">
+        <Label text="Actual Return:"/><DatePicker fx:id="actualReturn"/>
+        <CheckBox fx:id="damaged" text="Damaged"/>
+        <TextField fx:id="damageCharge" promptText="Damage charge"/>
+        <TextField fx:id="damageNotes" promptText="Damage notes"/>
+        <Button text="Process Return" onAction="#process"/>
+      </HBox>
+      <Label fx:id="result" wrapText="true"/>
+    </VBox>
+  </center>
+</BorderPane>

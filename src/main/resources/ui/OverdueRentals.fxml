@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.OverdueController" prefWidth="1000" prefHeight="600">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Overdue Rentals" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <TableView fx:id="table">
+      <columns>
+        <TableColumn fx:id="cId" text="ID" prefWidth="50"/>
+        <TableColumn fx:id="cCust" text="Customer" prefWidth="180"/>
+        <TableColumn fx:id="cBranch" text="Branch" prefWidth="140"/>
+        <TableColumn fx:id="cEq" text="Equipment" prefWidth="200"/>
+        <TableColumn fx:id="cDue" text="Due Date" prefWidth="100"/>
+        <TableColumn fx:id="cDays" text="Days Overdue" prefWidth="120"/>
+      </columns>
+    </TableView>
+  </center>
+</BorderPane>

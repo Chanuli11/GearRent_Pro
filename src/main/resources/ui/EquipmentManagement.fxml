@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.EquipmentController" prefWidth="1050" prefHeight="650">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Equipment Management" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <ComboBox fx:id="branchBox" promptText="Branch"/>
+        <ComboBox fx:id="categoryBox" promptText="Category"/>
+        <TextField fx:id="brand" promptText="Brand"/>
+        <TextField fx:id="model" promptText="Model"/>
+        <TextField fx:id="year" promptText="Year"/>
+        <TextField fx:id="price" promptText="Daily price"/>
+        <TextField fx:id="deposit" promptText="Deposit"/>
+        <ComboBox fx:id="statusBox" promptText="Status"/>
+      </HBox>
+      <HBox spacing="6">
+        <Button text="Save" onAction="#save"/><Button text="Update" onAction="#update"/>
+        <Button text="Delete" onAction="#delete"/><Button text="Clear" onAction="#clear"/>
+        <Separator orientation="VERTICAL"/>
+        <Label text="Filter:"/>
+        <ComboBox fx:id="fBranch" promptText="Branch"/>
+        <ComboBox fx:id="fCategory" promptText="Category"/>
+        <ComboBox fx:id="fStatus" promptText="Status"/>
+        <TextField fx:id="fText" promptText="Brand/Model"/>
+        <Button text="Search" onAction="#search"/>
+      </HBox>
+      <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="cId" text="ID" prefWidth="50"/>
+          <TableColumn fx:id="cCat" text="Category" prefWidth="100"/>
+          <TableColumn fx:id="cBranch" text="Branch" prefWidth="120"/>
+          <TableColumn fx:id="cBrand" text="Brand" prefWidth="100"/>
+          <TableColumn fx:id="cModel" text="Model" prefWidth="120"/>
+          <TableColumn fx:id="cYear" text="Year" prefWidth="60"/>
+          <TableColumn fx:id="cPrice" text="Daily" prefWidth="80"/>
+          <TableColumn fx:id="cDep" text="Deposit" prefWidth="80"/>
+          <TableColumn fx:id="cStatus" text="Status" prefWidth="120"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </center>
+</BorderPane>

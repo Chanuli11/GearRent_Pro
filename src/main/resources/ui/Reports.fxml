@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.ReportController" prefWidth="1000" prefHeight="650">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Reports" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <Label text="From:"/><DatePicker fx:id="from"/>
+        <Label text="To:"/><DatePicker fx:id="to"/>
+        <ComboBox fx:id="branchBox" promptText="Branch (for utilization)"/>
+        <Button text="Branch Revenue" onAction="#branchReport"/>
+        <Button text="Equipment Utilization" onAction="#utilReport"/>
+      </HBox>
+      <Label fx:id="title" style="-fx-font-weight:bold;"/>
+      <TableView fx:id="table" VBox.vgrow="ALWAYS"/>
+    </VBox>
+  </center>
+</BorderPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.ReservationController" prefWidth="1000" prefHeight="600">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Reservations" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <ComboBox fx:id="branchBox" promptText="Branch"/>
+        <ComboBox fx:id="equipmentBox" promptText="Equipment"/>
+        <ComboBox fx:id="customerBox" promptText="Customer"/>
+        <DatePicker fx:id="startDate" promptText="Start"/>
+        <DatePicker fx:id="endDate" promptText="End"/>
+        <Button text="Create Reservation" onAction="#create"/>
+        <Button text="Cancel Selected" onAction="#cancel"/>
+        <Button text="Convert to Rental" onAction="#convert"/>
+      </HBox>
+      <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="cId" text="ID" prefWidth="50"/>
+          <TableColumn fx:id="cEq" text="Equipment" prefWidth="200"/>
+          <TableColumn fx:id="cCust" text="Customer" prefWidth="180"/>
+          <TableColumn fx:id="cFrom" text="From" prefWidth="100"/>
+          <TableColumn fx:id="cTo" text="To" prefWidth="100"/>
+          <TableColumn fx:id="cStatus" text="Status" prefWidth="100"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </center>
+</BorderPane>

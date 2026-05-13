@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?> <?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.gearrent.controller.DashboardController" prefWidth="900" prefHeight="600">
+    <top>
+        <HBox spacing="10" style="-fx-background-color:#1d3557; -fx-padding:12;">
+            <Label text="GearRent Pro" style="-fx-text-fill:white; -fx-font-size:18; -fx-font-weight:bold;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userInfo" style="-fx-text-fill:white;"/>
+            <Button text="Logout" onAction="#onLogout"/>
+        </HBox>
+    </top>
+    <left>
+        <VBox spacing="8" style="-fx-padding:14; -fx-background-color:#f1faee;" prefWidth="220">
+            <Button fx:id="btnBranches" text="Manage Branches" maxWidth="Infinity" onAction="#openBranches"/>
+            <Button fx:id="btnCategories" text="Manage Categories" maxWidth="Infinity" onAction="#openCategories"/>
+            <Button fx:id="btnEquipment" text="Manage Equipment" maxWidth="Infinity" onAction="#openEquipment"/>
+            <Button fx:id="btnCustomers" text="Manage Customers" maxWidth="Infinity" onAction="#openCustomers"/>
+            <Button fx:id="btnReservations" text="Reservations" maxWidth="Infinity" onAction="#openReservations"/>
+            <Button fx:id="btnRentals" text="Rentals" maxWidth="Infinity" onAction="#openRentals"/>
+            <Button fx:id="btnReturns" text="Returns" maxWidth="Infinity" onAction="#openReturns"/>
+            <Button fx:id="btnOverdue" text="Overdue Rentals" maxWidth="Infinity" onAction="#openOverdue"/>
+            <Button fx:id="btnReports" text="Reports" maxWidth="Infinity" onAction="#openReports"/>
+            <Button fx:id="btnMembership" text="Membership Config" maxWidth="Infinity" onAction="#openMembership"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox alignment="CENTER" spacing="10">
+            <Label text="Welcome to GearRent Pro" style="-fx-font-size:22;"/>
+            <Label fx:id="welcomeMsg"/>
+        </VBox>
+    </center>
+</BorderPane>

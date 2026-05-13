@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?> <?import javafx.scene.control.*?> <?import javafx.geometry.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.gearrent.controller.BranchController" prefWidth="900" prefHeight="600">
+  <top><HBox spacing="10" style="-fx-padding:10;"><Button text="« Back" onAction="#back"/><Label text="Branch Management" style="-fx-font-size:18; -fx-font-weight:bold;"/></HBox></top>
+  <center>
+    <VBox spacing="10" style="-fx-padding:10;">
+      <HBox spacing="6">
+        <TextField fx:id="code" promptText="Branch code"/>
+        <TextField fx:id="name" promptText="Name"/>
+        <TextField fx:id="address" promptText="Address"/>
+        <TextField fx:id="contact" promptText="Contact"/>
+        <Button text="Save" onAction="#save"/>
+        <Button text="Update" onAction="#update"/>
+        <Button text="Delete" onAction="#delete"/>
+        <Button text="Clear" onAction="#clear"/>
+      </HBox>
+      <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn fx:id="cId" text="ID" prefWidth="60"/>
+          <TableColumn fx:id="cCode" text="Code" prefWidth="100"/>
+          <TableColumn fx:id="cName" text="Name" prefWidth="220"/>
+          <TableColumn fx:id="cAddress" text="Address" prefWidth="300"/>
+          <TableColumn fx:id="cContact" text="Contact" prefWidth="120"/>
+        </columns>
+      </TableView>
+    </VBox>
+  </center>
+</BorderPane>
