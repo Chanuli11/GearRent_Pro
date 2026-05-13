@@ -163,13 +163,3 @@ lives in `RentalService.DEPOSIT_LIMIT`.
 | No data shows | Re-run `database.sql` in MySQL Workbench. |
 
 ---
-
-## 8. Submission Checklist
-
-- [x] GitHub repo with full source code
-- [x] `database.sql` with schema + sample data (3 branches, 5 categories, 21 equipment, 10 customers, sample rentals incl. overdue + damaged)
-- [x] `README.md` with setup instructions and default credentials
-- [x] Layered architecture (Entity / DAO / Service / Controller / UI)
-- [x] JDBC + transactions for critical operations
-- [x] Input validation with friendly error messages
-- [x] Role-based access control after login
